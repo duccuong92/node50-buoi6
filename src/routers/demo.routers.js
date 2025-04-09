@@ -1,19 +1,14 @@
 import express from "express";
-import pool from "../common/mysql2/pool.mysql2.js";
 import demoController from "../controllers/demo.controller.js";
 
 const demoRouter = express.Router();
 
 // http://localhost:3069/demo/check-server
-demoRouter.get("/", demoController.helloWorld);
-
-demoRouter.get("/check-server", demoController.checkServer);
-
+// demoRouter.get("/", demoController.helloWorld);
 // Nhận dữ liệu từ Query
-demoRouter.get(`/`, (request, response, next) => {
-  response.json(`hello world`);
-});
+demoRouter.get(`/`, demoController.helloWorld);
 
+demoRouter.get(`/check-server`, demoController.checkServer);
 // demoRouter.post
 // demoRouter.patch
 // demoRouter.delete

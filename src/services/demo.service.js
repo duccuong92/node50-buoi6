@@ -3,11 +3,13 @@ import { models } from "../common/sequelize/connect.sequelize.js";
 import Permissions from "../models/PermissionByMe.js";
 
 const demoService = {
-  query: () => {
-    const { page, pageSize, timKiem } = request.query;
-    console.log({ page, pageSize, timKiem });
-    return `đây là api demo nhận dữ liệu từ query`;
-  },
+// Trong demo.service.js
+query: (request) => {
+  const { page, pageSize, timKiem } = request.query;
+  console.log({ page, pageSize, timKiem });
+  return `đây là api demo nhận dữ liệu từ query`;
+},
+
   helloWorld: () => {
     return `hello world`;
   },
